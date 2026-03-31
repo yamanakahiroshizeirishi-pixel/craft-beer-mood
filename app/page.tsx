@@ -88,9 +88,10 @@ export default function AdminPage() {
     if (res.ok) {
       setConfigured(true);
       setShowSettings(false);
-      setSettingsMsg("保存しました");
+      setSettingsMsg("保存しました。反映まで約1分かかります（自動再デプロイ中）");
     } else {
-      setSettingsMsg("保存に失敗しました");
+      const data = await res.json().catch(() => ({}));
+      setSettingsMsg(data.error || "保存に失敗しました");
     }
     setSavingSettings(false);
   }

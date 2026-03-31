@@ -242,7 +242,8 @@ export default function AdminPage() {
               placeholder="CSVペースト：「名前,メール」または「名前[Tab]メール」の形式で複数行貼り付け"
               rows={2}
               onPaste={handlePaste}
-              readOnly
+              onChange={() => {}}
+              value=""
               className="w-full px-3 py-2 text-xs border border-dashed border-gray-300 rounded-lg bg-gray-50 text-gray-400 resize-none focus:outline-none focus:border-amber-300 cursor-pointer"
             />
           </div>
